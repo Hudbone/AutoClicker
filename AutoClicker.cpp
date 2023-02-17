@@ -2,7 +2,6 @@
 #include <iostream>
 #include <windows.h>
 #include <limits>
-8
 using namespace std;
 
 ostream &operator<<(ostream &o, const AutoClicker &a) {
@@ -54,12 +53,6 @@ void AutoClicker::click() {
             cout << "Auto Clicker Starting. . .\n";
             SetActive(true);
             while(GetActive()){
-                POINT p;
-                if(GetCursorPos(&p)){
-                    SetxPos(p.x);
-                    SetyPos(p.y);
-                }
-                SetCursorPos(GetxPos(), GetyPos());
                 INPUT ip;
                 ip.type = INPUT_MOUSE;
                 ip.mi.time = 0;
@@ -94,12 +87,6 @@ void AutoClicker::click() {
             cout << "Auto Clicker Starting. . .\n";
             SetActive(true);
             while(GetActive()){
-                POINT p;
-                if(GetCursorPos(&p)){
-                    SetxPos(p.x);
-                    SetyPos(p.y);
-                }
-                SetCursorPos(GetxPos(), GetyPos());
                 INPUT ip;
                 ip.type = INPUT_MOUSE;
                 ip.mi.time = 0;

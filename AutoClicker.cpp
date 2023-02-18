@@ -1,7 +1,6 @@
 #include "AutoClicker.h"
 #include <iostream>
 #include <windows.h>
-#include <limits>
 using namespace std;
 
 ostream &operator<<(ostream &o, const AutoClicker &a) {
@@ -74,7 +73,7 @@ void AutoClicker::click() {
             cin >> s;
             while(!cin){
                 cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.ignore(INT_MAX, '\n');
                 cout << "\nPlease input an integer: ";
                 cin >> s;
             }

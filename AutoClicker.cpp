@@ -33,15 +33,16 @@ void AutoClicker::click() {
             }
             while(GetActive()){
                 SetCursorPos(GetxPos(), GetyPos());
-                INPUT ip;
-                ip.type = INPUT_MOUSE;
-                ip.mi.time = 0;
-                ip.mi.dwExtraInfo = 0;
-                ip.mi.mouseData = 0;
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-                SendInput(1,&ip,sizeof(INPUT));
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-                SendInput(1,&ip,sizeof(INPUT));
+                INPUT ip[2];
+                ip[0].type = INPUT_MOUSE;
+                ip[0].mi.time = 0;
+                ip[0].mi.mouseData = 0;
+                ip[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                ip[1].type = INPUT_MOUSE;
+                ip[1].mi.time = 0;
+                ip[1].mi.mouseData = 0;
+                ip[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                SendInput(2, ip, sizeof(INPUT));
                 if(GetAsyncKeyState(0x30)){
                     SetActive(false);
                     cout << "Stopping Auto Clicker. . .\n";
@@ -52,15 +53,16 @@ void AutoClicker::click() {
             cout << "Auto Clicker Starting. . .\n";
             SetActive(true);
             while(GetActive()){
-                INPUT ip;
-                ip.type = INPUT_MOUSE;
-                ip.mi.time = 0;
-                ip.mi.dwExtraInfo = 0;
-                ip.mi.mouseData = 0;
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-                SendInput(1,&ip,sizeof(INPUT));
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-                SendInput(1,&ip,sizeof(INPUT));
+                INPUT ip[2];
+                ip[0].type = INPUT_MOUSE;
+                ip[0].mi.time = 0;
+                ip[0].mi.mouseData = 0;
+                ip[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                ip[1].type = INPUT_MOUSE;
+                ip[1].mi.time = 0;
+                ip[1].mi.mouseData = 0;
+                ip[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                SendInput(2, ip, sizeof(INPUT));
                 if(GetAsyncKeyState(0x30)){
                     SetActive(false);
                     cout << "Stopping Auto Clicker. . .\n";
@@ -86,15 +88,16 @@ void AutoClicker::click() {
             cout << "Auto Clicker Starting. . .\n";
             SetActive(true);
             while(GetActive()){
-                INPUT ip;
-                ip.type = INPUT_MOUSE;
-                ip.mi.time = 0;
-                ip.mi.dwExtraInfo = 0;
-                ip.mi.mouseData = 0;
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-                SendInput(1, &ip, sizeof(INPUT));
-                ip.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-                SendInput(1, &ip, sizeof(INPUT));
+                INPUT ip[2];
+                ip[0].type = INPUT_MOUSE;
+                ip[0].mi.time = 0;
+                ip[0].mi.mouseData = 0;
+                ip[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                ip[1].type = INPUT_MOUSE;
+                ip[1].mi.time = 0;
+                ip[1].mi.mouseData = 0;
+                ip[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                SendInput(2, ip, sizeof(INPUT));
                 srand((unsigned)time(nullptr));
                 Sleep((rand()%(1+GetMS())));
                 if (GetAsyncKeyState(0x30))

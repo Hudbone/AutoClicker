@@ -73,18 +73,18 @@ void AutoClicker::click() {
             int s;
             cout << "\nChoose the ms window to activate the auto clicker: ";
             cin >> s;
-            while(!cin){
-                cin.clear();
-                cin.ignore(INT_MAX, '\n');
-                cout << "\nPlease input an integer: ";
-                cin >> s;
+            if(!cin){
+                throw invalid_argument("Number must be an integer.");
             }
-            while(s <= 0)
-            {
+            while(s <= 0){
                 cout << "\nNumber needs to be greater than 0: ";
                 cin >> s;
+                if(!cin){
+                    throw invalid_argument("Number must be an integer.");
+                }
             }
-            SetMS(s);
+            int i = static_cast<int>(s);
+            SetMS(i);
             cout << "Auto Clicker Starting. . .\n";
             SetActive(true);
             while(GetActive()){
